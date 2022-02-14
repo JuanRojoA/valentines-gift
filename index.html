@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="shortcut icon" href="https://www.pngall.com/wp-content/uploads/3/Heart-PNG-Photos.png" type="image/x-icon">
+  <title>Valentines Day Gift</title>
+</head>
+
+<body>
+
+  <div id="countdown-container">
+    <p id="countdown"></p>
+  </div>
+
+  <div class="modal-container hidden" id="spotify-modal-container">
+    <div class="modal" id="modal-spotify">
+      <h2 class="modal-title">Hmmm... Looks like you wanna listen to something???</h2>
+      <p>
+        First solve the question (no clues given):
+        <br>
+        <span class="question">What is the word I use the most when refferring to future you?</span>
+      </p>
+      <input type="text" id="husband-question" class="input-question">
+      <div class="button-container">
+        <button id="cancel-button-spo" class="button cancel-button">GIVE UP</button>
+        <button id="check-button-spo" class="button check-button">Check Answer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-container hidden" id="text-modal-container">
+    <div class="modal" id="modal-text">
+      <h2 class="modal-title">Do you really wanna read that???</h2>
+      <p>
+        Welp, if so, fill in the date to the question (no clues given):
+        <br>
+        <span class="question">When was the day you told your sister about me?</span>
+      </p>
+      <input type="date" id="date-question" class="input-question">
+      <div class="button-container">
+        <button id="cancel-button-text" class="button cancel-button">GIVE UP</button>
+        <button id="check-button-text" class="button check-button">Check Answer</button>
+      </div>
+    </div>
+  </div>
+
+  <header id="header">
+    <h1 id="title"></h1>
+  </header>
+
+  <main id="main">
+    <div id="quote-container">
+      <p id="quote"></p>
+    </div>
+    <div id="icon-container">
+      <i class="bi bi-spotify" id="spotify-btn"></i>
+      <i class="bi bi-file-text" id="text-btn"></i>
+    </div>
+  </main>
+
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>
