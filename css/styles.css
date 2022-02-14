@@ -20,6 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 2rem;
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -66,11 +67,17 @@ body {
   border-radius: 2rem;
 }
 
-#quote {
+#quote,
+#date {
   padding: 0 3rem;
   font-size: 3rem;
+  font-weight: 700;
   text-align: center;
   text-transform: capitalize;
+}
+
+#date {
+  font-size: 2rem;
 }
 
 #icon-container {
@@ -191,17 +198,21 @@ body {
 
 #countdown-container {
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0);
+  background-image: url(../img/background.jpg);
+  background-size: cover;
 }
 
 #countdown {
   font-size: 7rem;
+  text-align: center;
   background: -webkit-linear-gradient(
     45deg,
     rgb(252, 109, 57),
@@ -214,4 +225,65 @@ body {
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  #title {
+    width: 90%;
+    font-size: 4.5rem;
+  }
+  #main {
+    width: 90%;
+  }
+  #quote {
+    font-size: 2.5rem;
+  }
+  #date {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #title {
+    font-size: 4rem;
+  }
+  #countdown {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #title {
+    font-size: 3.5rem;
+  }
+  #quote {
+    font-size: 2.3rem;
+  }
+  #date {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #title {
+    width: 98%;
+  }
+  #main {
+    width: 98%;
+  }
+  #countdown {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #title {
+    width: 98%;
+  }
+  #main {
+    width: 98%;
+  }
+  #countdown {
+    font-size: 4rem;
+  }
 }

@@ -1,5 +1,7 @@
 const titleObj = document.getElementById("title");
 const quoteObj = document.getElementById("quote");
+const dateTextObj = document.getElementById("date");
+
 const chackAnswerSpotifyBtn = document.getElementById("check-button-spo");
 const closeSpotifyModalBtn = document.getElementById("cancel-button-spo");
 const inputSpotifyQuestion = document.getElementById("husband-question");
@@ -14,6 +16,7 @@ const inputTextQuestion = document.getElementById("date-question");
 const openTextModalBtn = document.getElementById("text-btn");
 const textModalContainer = document.getElementById("text-modal-container");
 
+const dayQuote = new Date().getDate();
 const hours = new Date().getHours();
 
 const amswerSpotify = "Husband";
@@ -37,31 +40,38 @@ const terms = [
   "romeo",
 ];
 
-const quotes = [
-  "Would you marry me?",
-  "Everything is connected",
-  "What if everything that came from the past was influenced by the future.",
-  "We all face the same end. Those above have long forgotten us. They do not judge us. In death I am all alone, and my only judge… is me.",
-  "What we know is a drop. What we don’t know is an ocean",
-  "The end is the beginning, and the beginning is the end",
-  "Yesterday, today and tomorrow are not consecutive, they are connected in a never-ending circle. Everything is connected.",
-  "Two days ago I kissed my aunt!!!",
-  "Tick Tack. Tick Tack.",
-  "You and I are perfect for each other. Never believe anything else",
-  "WOWSER",
-  "Everything is a picture waiting to be taken...",
-  "I wish I could stay in this moment forever. (...) But then it wouldn't be a moment.",
-  "This action will have consequences",
-  "With great power comes great bullshit.",
-  "I pledge allegiance to Max and the power for which she stands...",
-  "World's gayest most wholesome best gay couple",
-  "I like you so much, I can't describe it",
-  "Never shut up.",
-  "I'm glad I met you too, fuck you too!",
-];
+const quotes = {
+  1: "I pledge allegiance to Max and the power for which she stands...",
+  2: "World's gayest most wholesome best gay couple",
+  3: "I like you so much, I can't describe it",
+  4: "Never shut up.",
+  5: "I'm glad I met you too, fuck you too!",
+  6: "I am deeply, truly, maddly in love with you.",
+  7: "Show me some patas.",
+  8: "Today, You are as beautiful as ever.",
+  9: "I am not letting you win.",
+  10: "Do you wanna make a snowman?",
+  11: "You got a friend in me.",
+  12: "Has anyone ever told you how pretty you are?",
+  13: "What if i just want to be with you?",
+  14: "You and I are perfect for each other. Never believe anything else.",
+  15: "Everything is connected",
+  16: "What if everything that came from the past was influenced by the future.",
+  17: "We all face the same end. Those above have long forgotten us. They do not judge us. In death I am all alone, and my only judge… is me.",
+  18: "What we know is a drop. What we don’t know is an ocean",
+  19: "The end is the beginning, and the beginning is the end",
+  20: "Yesterday, today and tomorrow are not consecutive, they are connected in a never-ending circle. Everything is connected.",
+  21: "Two days ago I kissed my aunt!!!",
+  22: "Tick Tack. Tick Tack.",
+  23: "Would you marry me?",
+  24: "WOWSER",
+  25: "Everything is a picture waiting to be taken...",
+  26: "I wish I could stay in this moment forever. (...) But then it wouldn't be a moment.",
+  27: "This action will have consequences",
+  28: "With great power comes great bullshit.",
+};
 
 const randomGreeting = Math.floor(Math.random() * (terms.length - 1));
-const randomQuote = Math.floor(Math.random() * (quotes.length - 1));
 
 if (hours >= 0 && hours < 6) {
   titleObj.innerHTML = `Good Evening, ${terms[randomGreeting]}`;
@@ -73,7 +83,10 @@ if (hours >= 0 && hours < 6) {
   titleObj.innerHTML = `Good Night, ${terms[randomGreeting]}`;
 }
 
-quoteObj.innerHTML = `"${quotes[randomQuote]}"`;
+var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
+dateTextObj.innerText = utc;
+
+quoteObj.innerHTML = `"${quotes[dayQuote]}"`;
 
 openSpotifyModalBtn.addEventListener("click", () => {
   spotifyModalContainer.classList.remove("hidden");
@@ -100,7 +113,7 @@ openTextModalBtn.addEventListener("click", () => {
 });
 
 closeTextModalBtn.addEventListener("click", () => {
-  alert("Giving up is for losers, but okay. Just so you know, I am crying.");
+  alert("Louis will be so dissappointed :,(");
   textModalContainer.classList.add("hidden");
 });
 
@@ -135,7 +148,7 @@ function showAlerts(booleanValue, link) {
 }
 
 // Set the date we're counting down to
-let countDownDate = new Date("Feb 14, 2022 17:00:00").getTime();
+let countDownDate = new Date("Feb 14, 2022 17:30:00").getTime();
 
 // Update the count down every 1 second
 let x = setInterval(function () {
