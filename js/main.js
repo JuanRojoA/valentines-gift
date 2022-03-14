@@ -54,7 +54,7 @@ const quotes = {
   11: "You got a friend in me.",
   12: "Has anyone ever told you how pretty you are?",
   13: "What if i just want to be with you?",
-  14: "You and I are perfect for each other. Never believe anything else.",
+  14: "Let me go back to No Boys Year then ¬‿¬",
   15: "Everything is connected",
   16: "What if everything that came from the past was influenced by the future.",
   17: "We all face the same end. Those above have long forgotten us. They do not judge us. In death I am all alone, and my only judge… is me.",
