@@ -41,34 +41,37 @@ const terms = [
 ];
 
 const quotes = {
-  1: "I pledge allegiance to Max and the power for which she stands...",
-  2: "World's gayest most wholesome best gay couple",
-  3: "I like you so much, I can't describe it",
-  4: "Never shut up.",
-  5: "I'm glad I met you too, fuck you too!",
-  6: "I am deeply, truly, maddly in love with you.",
-  7: "Show me some patas.",
-  8: "Today, You are as beautiful as ever.",
-  9: "I am not letting you win.",
-  10: "Do you wanna make a snowman?",
-  11: "You got a friend in me.",
-  12: "Has anyone ever told you how pretty you are?",
-  13: "What if i just want to be with you?",
-  14: "Let me go back to No Boys Year then ¬‿¬",
-  15: "Everything is connected",
-  16: "What if everything that came from the past was influenced by the future.",
-  17: "We all face the same end. Those above have long forgotten us. They do not judge us. In death I am all alone, and my only judge… is me.",
-  18: "What we know is a drop. What we don’t know is an ocean",
-  19: "The end is the beginning, and the beginning is the end",
-  20: "Yesterday, today and tomorrow are not consecutive, they are connected in a never-ending circle. Everything is connected.",
-  21: "Two days ago I kissed my aunt!!!",
-  22: "Tick Tack. Tick Tack.",
-  23: "Would you marry me?",
-  24: "WOWSER",
-  25: "Everything is a picture waiting to be taken...",
-  26: "I wish I could stay in this moment forever. (...) But then it wouldn't be a moment.",
-  27: "This action will have consequences",
-  28: "With great power comes great bullshit.",
+  1: "I revoke my curse let it be no more.",
+  2: "Furry. Hope you get better soon.",
+  3: "White boys' hoe",
+  4: "Hello beastie.",
+  5: "You make me so happy.",
+  6: "Who's a cute boy?",
+  7: "Seek help.",
+  8: "Eres mi varón",
+  9: "I want some goodnight kisses.",
+  10: "Oh, look, the little beast is about to fall off a cliff.",
+  11: "And you love me like that.",
+  12: "You're a strange sad little man.",
+  13: "I shall bestbow a gift on the child.",
+  14: "Ay es que eres tan lindo, maldita sea.",
+  15: "Come and kiss me.",
+  16: "KISS KISS and plenty of hugs.",
+  17: "Te amo.",
+  18: "Crybaby.",
+  19: "Tengo una serpiente en mi bota",
+  20: "Let's make a life together!!!",
+  21: "Let's no be like an anime and go on forever.",
+  22: "Mi varón.",
+  23: "Someone likes to be called lil kitten, huh???",
+  24: "Come and fuck me, baby.",
+  25: "I like you begging. Do it again.",
+  26: "Me gustas mucho, me encantas.",
+  27: "Goodnight, my love.",
+  28: "ILLEGAL.",
+  29: "Re lindo ufff.",
+  30: "Didn't mean to kiss the screen like that, my bad.",
+  31: "I just love seeing you.",
 };
 
 const randomGreeting = Math.floor(Math.random() * (terms.length - 1));
@@ -83,8 +86,19 @@ if (hours >= 0 && hours < 6) {
   titleObj.innerHTML = `Good Night, ${terms[randomGreeting]}`;
 }
 
-var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
-dateTextObj.innerText = utc;
+let day = new Date().getDate();
+let year = new Date().getFullYear();
+let month = new Date().getMonth();
+
+if (day < 10) {
+  day = "0" + day;
+}
+
+if (month < 10) {
+  month = "0" + month;
+}
+
+dateTextObj.innerText = day + "/" + month + "/" + year;
 
 quoteObj.innerHTML = `"${quotes[dayQuote]}"`;
 
@@ -146,32 +160,3 @@ function showAlerts(booleanValue, link) {
     alert("Wrong answer, how sad for you :(");
   }
 }
-
-// Set the date we're counting down to
-let countDownDate = new Date("Feb 14, 2022 17:30:00").getTime();
-
-// Update the count down every 1 second
-let x = setInterval(function () {
-  // Get today's date and time
-  let now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  let distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("countdown").innerHTML =
-    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").classList.add("hidden");
-    document.getElementById("countdown-container").style.display = "none";
-  }
-}, 1000);
